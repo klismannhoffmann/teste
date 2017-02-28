@@ -1,29 +1,19 @@
 
 <?php
-//Abrir Conexão
-$link = mysqli_connect('localhost','root','','maestro');
-
-$sql = "
-		SELECT
-			
-			id_professor,
-			nome
-			
-		FROM professor
-		JOIN curso ON (id_professor)
-		
-	   ";
-
-$resultado = mysqli_query($link, $sql);
-if(mysqli_num_rows($resultado)){
-	while($row = mysqli_fetch_assoc($resultado)){
-		
-		echo 'NOME ALUNO:'.$row['1']."</br> \n";
-	
-
-
+// Abrir Conexão
+$link = mysqli_connect ( 'localhost', 'root', '', 'maestro' );
+$sql = "SELECT * usuarios";
+$resultado = mysqli_query ( $link, $sql );
+if (mysqli_num_rows ( $resultado )) {
+	while ( $row = mysqli_fetch_assoc ( $resultado ) ) {
+		$usuario1=$row[1];
+		$senha1= $row[2];
+		if(($usuario1==$usuario)&&($senha==$senha1)){}
 	}
 }
+?>
+
+
 
 
 /*
